@@ -12,7 +12,7 @@ if ($argc < 3)
 $receiver 		= $_SERVER['argv'][1];
 $transponder 	= $_SERVER['argv'][2];
 
-//sendMessage("WhatsMYLAPS TEST\nGeactiveerd voor $receiver met transponder $transponder.\nU ontvangt nu uw nieuwe rondetijden, veel plezier!\n\n-Team BAMMES-");
+sendMessage("WhatsMYLAPS TEST\nGeactiveerd voor $receiver met transponder $transponder.\nU ontvangt nu uw nieuwe rondetijden, veel plezier!\n\n-Team BAMMES-");
 
 $terminate = false;
 $lastSize = 30; // Skip first title row
@@ -58,7 +58,7 @@ while ($terminate == false)
 
 		print($msg);
 
-		//sendMessage($msg);
+		sendMessage($msg);
 
 		$lastSize = $currSize;
 	}
