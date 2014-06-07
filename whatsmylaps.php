@@ -15,7 +15,7 @@ $transponder 	= $_SERVER['argv'][2];
 sendMessage("WhatsMYLAPS TEST\nGeactiveerd voor $receiver met transponder $transponder.\nU ontvangt nu uw nieuwe rondetijden, veel plezier!\n\n-Team BAMMES-");
 
 $terminate = false;
-$lastSize = 30; // Skip first title row
+$lastSize = 0; // Skip first title row
 $countdown = 10;
 
 while ($terminate == false)
@@ -35,6 +35,11 @@ while ($terminate == false)
 	$currSize = strlen($data);
 
 	//print("currSize $currSize \nlastSize $lastSize\n");
+	if ($lastSize == 0)
+	{
+		$lastSize = $currSize;
+		continue;
+	}
 
 	if ($currSize > $lastSize)
 	{
