@@ -16,7 +16,7 @@ sendMessage("WhatsMYLAPS TEST\nGeactiveerd voor $receiver met transponder $trans
 
 $terminate = false;
 $lastSize = 0; // Skip first title row
-$countdown = 10;
+$countdown = 300;
 
 while ($terminate == false)
 {
