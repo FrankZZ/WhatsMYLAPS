@@ -2,6 +2,8 @@
 include 'whatsapi/whatsprot.class.php';
 include 'config.inc.php';
 
+define("COUNTDOWN_TIME", 300);
+
 if ($argc < 3)
 {
 	echo "USAGE: " . $_SERVER['argv'][0] . "[whatsappNr] [transponderNr]";
@@ -16,7 +18,7 @@ sendMessage("WhatsMYLAPS TEST\nGeactiveerd voor $receiver met transponder $trans
 
 $terminate = false;
 $lastSize = 0; // Skip first title row
-$countdown = 300;
+$countdown = COUNTDOWN_TIME;
 
 while ($terminate == false)
 {
@@ -27,8 +29,8 @@ while ($terminate == false)
 		sleep(1);
 		continue;
 	}
-	print("                             \r");
-	$countdown = 10;
+	print("                                   \r");
+	$countdown = COUNTDOWN_TIME;
 
 	$data = rtrim(file_get_contents("http://practice.mylaps.com/practice/GetCSVFile.jsp?transponder=$transponder&tid=387"));
 
